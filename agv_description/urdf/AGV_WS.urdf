@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="agv_description">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0338494907392993 0.0164457211791747 0.0506709005666891"
+        rpy="0 0 0" />
+      <mass
+        value="15.8990354838314" />
+      <inertia
+        ixx="0.11596138353321"
+        ixy="0.00154677738522838"
+        ixz="0.000426728491902467"
+        iyy="0.192873885662289"
+        iyz="-4.06989711044256E-07"
+        izz="0.278584237866939" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="lidar_Link">
+    <inertial>
+      <origin
+        xyz="-5.69597392188759E-05 0.000131818454391162 0.0321889139445776"
+        rpy="0 0 0" />
+      <mass
+        value="0.115203669518366" />
+      <inertia
+        ixx="4.84163852542535E-05"
+        ixy="5.15274853406222E-06"
+        ixz="-2.5653164359673E-08"
+        iyy="3.84635053419228E-05"
+        iyz="5.62616246516522E-08"
+        izz="6.97501071303235E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_description/meshes/lidar_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_description/meshes/lidar_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar_joint"
+    type="fixed">
+    <origin
+      xyz="0.36251 -0.00042929 0.1021"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lidar_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="wheel_left_Link">
+    <inertial>
+      <origin
+        xyz="1.25327155378652E-05 0.00232747086852683 -0.000591259458992605"
+        rpy="0 0 0" />
+      <mass
+        value="1.18040778354055" />
+      <inertia
+        ixx="0.00340912176373557"
+        ixy="3.56674807570793E-10"
+        ixz="-2.67021961822549E-10"
+        iyy="0.00648485231824381"
+        iyz="-1.66035602867243E-08"
+        izz="0.0034091341132575" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_description/meshes/wheel_left_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_description/meshes/wheel_left_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_left_joint"
+    type="continuous">
+    <origin
+      xyz="0.00014611 0.19392 0.051851"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_left_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="wheel_right_Link">
+    <inertial>
+      <origin
+        xyz="0.000543739401965333 -0.00232747086852664 -0.000232577470086322"
+        rpy="0 0 0" />
+      <mass
+        value="1.18040778354055" />
+      <inertia
+        ixx="0.00340913220352766"
+        ixy="-1.52673476422736E-08"
+        ixz="-4.47308430795828E-09"
+        iyy="0.00648485231824382"
+        iyz="6.53556187683385E-09"
+        izz="0.00340912367346542" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_description/meshes/wheel_right_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_description/meshes/wheel_right_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_right_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0013939 -0.19395 0.04778"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_right_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="caster_lefts_Link">
+    <inertial>
+      <origin
+        xyz="-5.50298950297012E-08 2.88657986402541E-15 -2.03930245715189E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0171141580030019" />
+      <inertia
+        ixx="2.30115547348356E-06"
+        ixy="-1.64292816896045E-09"
+        ixz="2.14774916055487E-10"
+        iyy="4.34191368646663E-06"
+        iyz="4.43338690517193E-11"
+        izz="2.30910882437253E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_description/meshes/caster_lefts_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_description/meshes/caster_lefts_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="caster_lefts_joint"
+    type="continuous">
+    <origin
+      xyz="-0.28811 0.20242 -0.023862"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="caster_lefts_Link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="caster_leftt_Link">
+    <inertial>
+      <origin
+        xyz="-5.50298967505469E-08 -2.77555756156289E-16 -2.03930245549697E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0171141580030019" />
+      <inertia
+        ixx="2.30115547348356E-06"
+        ixy="-1.64292816896136E-09"
+        ixz="2.14774916055537E-10"
+        iyy="4.34191368646663E-06"
+        iyz="4.43338690588285E-11"
+        izz="2.30910882437253E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_description/meshes/caster_leftt_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_description/meshes/caster_leftt_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="caster_leftt_joint"
+    type="continuous">
+    <origin
+      xyz="0.35188 0.20242 -0.023862"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="caster_leftt_Link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="1" />
+  </joint>
+  <link
+    name="caster_rightt_Link">
+    <inertial>
+      <origin
+        xyz="1.94089568322786E-06 -5.69199781752516E-08 -2.54712318497469E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0171141580030019" />
+      <inertia
+        ixx="2.31071743460606E-06"
+        ixy="5.9354384947313E-08"
+        ixz="-1.07533087595994E-09"
+        iyy="4.34017929113388E-06"
+        iyz="-1.59906308282775E-09"
+        izz="2.30128125858277E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_description/meshes/caster_rightt_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_description/meshes/caster_rightt_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="caster_rightt_joint"
+    type="continuous">
+    <origin
+      xyz="0.35187 -0.20351 -0.023862"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="caster_rightt_Link" />
+    <axis
+      xyz="-0.029314 -0.99957 0" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="caster_rights_Link">
+    <inertial>
+      <origin
+        xyz="2.58994590667805E-05 -2.97837483601016E-06 6.20707121126024E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0171141580030019" />
+      <inertia
+        ixx="2.32889859222332E-06"
+        ixy="2.31367184400118E-07"
+        ixz="-1.35734566226682E-09"
+        iyy="4.31532135805803E-06"
+        iyz="6.83115568832027E-10"
+        izz="2.30795803404135E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_description/meshes/caster_rights_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_description/meshes/caster_rights_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="caster_rights_joint"
+    type="continuous">
+    <origin
+      xyz="-0.28832 -0.20621 -0.023862"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="caster_rights_Link" />
+    <axis
+      xyz="-0.11424 -0.99345 0" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="0.1" 
+      friction="0.1" />
+  </joint>
+<gazebo>
+    <plugin name="diff_drive_controller" filename="libgazebo_ros_diff_drive.so">
+      <ros>
+        <remapping>cmd_vel:=cmd_vel</remapping>
+        <remapping>odom:=odom</remapping>
+      </ros>
+      <left_joint>wheel_left_joint</left_joint>
+      <right_joint>wheel_right_joint</right_joint>
+      <wheel_separation>0.387</wheel_separation>
+      <wheel_diameter>0.1</wheel_diameter>
+      <publish_odom>true</publish_odom>
+      <publish_odom_tf>true</publish_odom_tf>
+      <publish_wheel_tf>true</publish_wheel_tf>
+      <odometry_frame>odom</odometry_frame>
+      <robot_base_frame>base_link</robot_base_frame>
+    </plugin>
+  </gazebo>
+
+  <gazebo reference="wheel_left_Link">
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+    <material>Gazebo/Black</material>
+  </gazebo>
+  
+  <gazebo reference="wheel_right_Link">
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <gazebo reference="caster_lefts_Link"><mu1>0.1</mu1><mu2>0.1</mu2></gazebo>
+  <gazebo reference="caster_leftt_Link"><mu1>0.1</mu1><mu2>0.1</mu2></gazebo>
+  <gazebo reference="caster_rights_Link"><mu1>0.1</mu1><mu2>0.1</mu2></gazebo>
+  <gazebo reference="caster_rightt_Link"><mu1>0.1</mu1><mu2>0.1</mu2></gazebo>
+  
+</robot>
